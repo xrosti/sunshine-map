@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Саншайн — Карта зоны</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+
+  <header class="topbar">
+    <div class="logo">
+      <h1>САНШАЙН</h1>
+      <p>КАРТА ЗОНЫ</p>
+    </div>
+
+    <nav class="tabs">
+      <button class="tab active" onclick="setTab('map')">КАРТА</button>
+      <button class="tab" onclick="setTab('factions')">ФРАКЦИИ</button>
+    </nav>
+  </header>
+
+  <main class="layout">
+    <aside class="left-panel">
+      <h3 id="leftTitle">УСЛОВНЫЕ ОБОЗНАЧЕНИЯ</h3>
+      <div id="leftList"></div>
+    </aside>
+
+    <section class="map-frame">
+      <img src="img/map.png" class="map-img" alt="Карта Саншайна">
+
+      <button class="marker monolit" style="left: 14%; top: 13%;" onclick="openLocation('limansk')"><span class="badge">М</span><b>Лиманск</b></button>
+      <button class="marker greh" style="left: 35%; top: 25%;" onclick="openLocation('kpp')"><span class="badge">⚑</span><b>КПП</b></button>
+      <button class="marker greh" style="left: 16%; top: 43%;" onclick="openLocation('yantar')"><span class="badge">☠</span><b>Янтарь</b></button>
+      <button class="marker greh" style="left: 45%; top: 38%;" onclick="openLocation('wild')"><span class="badge">☠</span><b>Дикая территория</b></button>
+      <button class="marker greh" style="left: 18%; top: 58%;" onclick="openLocation('agroprom')"><span class="badge">⚑</span><b>Агропром</b></button>
+      <button class="marker greh" style="left: 42%; top: 58%;" onclick="openLocation('baraholka')"><span class="badge">▣</span><b>Барахолка</b></button>
+      <button class="marker freedom" style="left: 55%; top: 72%;" onclick="openLocation('snorks')"><span class="badge">☣</span><b>Деревня снорков</b></button>
+      <button class="marker sky" style="left: 19%; top: 88%;" onclick="openLocation('water')"><span class="badge">◆</span><b>Водонапорная</b></button>
+      <button class="marker oksop" style="left: 64%; top: 92%;" onclick="openLocation('south')"><span class="badge">⚑</span><b>South КПП</b></button>
+      <button class="marker freedom" style="left: 86%; top: 86%;" onclick="openLocation('freedomBase')"><span class="badge">☣</span><b>База Свободы</b></button>
+    </section>
+  </main>
+
+  <section id="infoPanel" class="info-panel">
+    <h2>Информация</h2>
+    <p>Нажми на метку или фракцию.</p>
+  </section>
+
+  <footer class="bottom">
+    <div class="card">
+      <span>ВРЕМЯ НА СЕРВЕРЕ</span>
+      <h2>00:00:00</h2>
+      <p class="blue">🌙 Ночь</p>
+    </div>
+
+    <div class="card">
+      <span>ОНЛАЙН НА СЕРВЕРЕ</span>
+      <h2>0 / 200</h2>
+      <p>Игроков</p>
+    </div>
+
+    <div class="card">
+      <span>СТАТУС ЗОНЫ</span>
+      <h2 class="orange">Повышенная</h2>
+      <p>Активность мутантов и аномалий</p>
+    </div>
+
+    <div class="card big-timer">
+      <span>ВЫБРОС ЧЕРЕЗ:</span>
+      <h2>00:00:00</h2>
+      <p>Ожидайте укрытие</p>
+    </div>
+  </footer>
+
+</div>
+<script src="script.js"></script>
+</body>
+</html>

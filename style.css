@@ -1,0 +1,266 @@
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  background:#050808;
+  color:#e8e8e8;
+  font-family:Arial,sans-serif;
+  overflow:hidden;
+}
+
+.app{
+  height:100vh;
+  padding:10px 14px;
+  background:radial-gradient(circle at center,rgba(35,65,40,.22),transparent 55%),#050808;
+}
+
+.topbar{
+  height:62px;
+  display:grid;
+  grid-template-columns:260px 1fr 260px;
+  align-items:start;
+}
+
+.logo{
+  padding-top:0;
+}
+
+.logo h1{
+  margin:0;
+  font-size:34px;
+  line-height:.95;
+  letter-spacing:2px;
+}
+
+.logo p{
+  margin:5px 0 0 1px;
+  font-size:13px;
+  color:#8b96a4;
+  letter-spacing:1px;
+}
+
+.tabs{
+  text-align:center;
+  padding-top:24px;
+}
+
+.tab{
+  min-width:120px;
+  padding:10px 26px;
+  color:#f0f0f0;
+  background:linear-gradient(#171d1d,#0b1010);
+  border:1px solid #2a3333;
+  border-radius:6px 6px 0 0;
+  font-size:15px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.tab.active{
+  border-bottom:2px solid #68d53f;
+}
+
+.layout{
+  display:grid;
+  grid-template-columns:220px 1fr;
+  gap:10px;
+  height:calc(100vh - 205px);
+  min-height:500px;
+}
+
+.left-panel,.info-panel,.card{
+  background:rgba(7,13,13,.94);
+  border:1px solid #253030;
+  border-radius:7px;
+  box-shadow:inset 0 0 35px rgba(255,255,255,.035),0 0 20px rgba(0,0,0,.35);
+}
+
+.left-panel{
+  padding:14px;
+  overflow-y:auto;
+}
+
+.left-panel h3{
+  margin:0 0 12px;
+  font-size:13px;
+}
+
+.list-item{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:9px 5px;
+  border-bottom:1px solid rgba(255,255,255,.06);
+  cursor:pointer;
+}
+
+.list-item:hover{
+  background:rgba(104,213,63,.08);
+  color:#7ee35c;
+}
+
+.list-icon{
+  width:30px;
+  height:30px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  background:#111;
+  border:1px solid #444;
+  flex:0 0 30px;
+}
+
+.list-item img{
+  width:42px;
+  height:42px;
+  object-fit:cover;
+  border-radius:5px;
+  flex:0 0 42px;
+}
+
+.map-frame{
+  position:relative;
+  overflow:hidden;
+  border:1px solid #303838;
+  border-radius:7px;
+  background:#111;
+}
+
+.map-img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  filter:brightness(.82) contrast(1.08) saturate(.9);
+  display:block;
+}
+
+.marker{
+  position:absolute;
+  transform:translate(-50%,-50%);
+  background:rgba(0,0,0,.78);
+  color:white;
+  border:1px solid #777;
+  border-radius:18px;
+  padding:5px 10px;
+  font-weight:bold;
+  cursor:pointer;
+  text-shadow:0 0 5px black;
+  display:flex;
+  align-items:center;
+  gap:6px;
+}
+
+.marker b{
+  white-space:nowrap;
+  font-size:12px;
+}
+
+.badge{
+  width:22px;
+  height:22px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  background:#111;
+  border:2px solid #ddd;
+  font-size:12px;
+}
+
+.marker:hover{
+  color:#ff9d00;
+  border-color:#ff9d00;
+}
+
+.greh .badge{border-color:#e05a22;color:#ff8a2a}
+.monolit .badge{border-color:#53d8ff;color:#bff4ff}
+.freedom .badge{border-color:#5dff43;color:#7cff60}
+.sky .badge{border-color:#37c7ff;color:#37c7ff}
+.oksop .badge{border-color:#d6bf32;color:#f1d945}
+
+
+.info-panel{
+    position: fixed !important;
+    top: 90px !important;
+    right: 18px !important;
+    left: auto !important;
+    bottom: auto !important;
+
+    width: 390px;
+    max-height: 75vh;
+    overflow-y: auto;
+
+    padding: 18px;
+
+    background: rgba(7,13,13,.97);
+    border: 1px solid #253030;
+    border-radius: 8px;
+
+    z-index: 99999;
+
+    display: none;
+}
+
+.info-panel.show{
+    display:block;
+}
+
+
+.info-panel h2{
+  margin:0 0 10px;
+  color:#ff9d00;
+}
+
+.info-panel img{
+  width:100%;
+  max-height:180px;
+  object-fit:contain;
+  border-radius:8px;
+  margin-bottom:12px;
+}
+
+.close-btn{
+  float:right;
+  background:#1b2222;
+  color:#fff;
+  border:1px solid #444;
+  border-radius:6px;
+  padding:4px 8px;
+  cursor:pointer;
+}
+
+.danger-high{color:#ff3636}
+.danger-mid{color:#ffae26}
+.danger-low{color:#59df48}
+
+.bottom{
+  margin-top:10px;
+  display:grid;
+  grid-template-columns:1fr 1fr 1.2fr 1.4fr;
+  gap:10px;
+  height:120px;
+}
+
+.card{
+  padding:14px 18px;
+}
+
+.card span{
+  color:#aaa;
+  font-size:12px;
+}
+
+.card h2{
+  margin:7px 0;
+  font-size:25px;
+}
+
+.orange,.big-timer h2{color:#ff9d00}
+.blue{color:#2faeff}
+
+@media (max-width:1200px){
+  body{overflow:auto}
+  .app{height:auto}
+  .layout{grid-template-columns:190px 1fr;height:620px}
+  .bottom{grid-template-columns:1fr 1fr;height:auto}
+  .info-panel{position:fixed;left:15px;right:15px;bottom:15px;width:auto}
+}
