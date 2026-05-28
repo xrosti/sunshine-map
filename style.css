@@ -264,3 +264,25 @@ body{
   .bottom{grid-template-columns:1fr 1fr;height:auto}
   .info-panel{position:fixed;left:15px;right:15px;bottom:15px;width:auto}
 }
+
+.tab-btn{
+    background: rgba(20,20,20,.85);
+    border: 1px solid #444;
+    color: white;
+    padding: 14px 35px;
+    border-radius: 12px 12px 0 0;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.tab-btn:hover{
+    background: rgba(40,40,40,.95);
+}
+
+.tab-btn.active{
+    background: #2d5f9c;
+    border-color: #6ea8ff;
+    box-shadow: 0 0 15px rgba(80,140,255,.6);
+    transform: translateY(-2px);
+}
