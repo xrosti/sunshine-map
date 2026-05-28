@@ -107,16 +107,3 @@ function closeInfo(){
 }
 
 renderMarks();
-
-const mapBtn = document.getElementById('mapBtn');
-const factionBtn = document.getElementById('factionBtn');
-
-mapBtn.onclick = () => {
-    mapBtn.classList.add('active');
-    factionBtn.classList.remove('active');
-}
-
-factionBtn.onclick = () => {
-    factionBtn.classList.add('active');
-    mapBtn.classList.remove('active');
-}
