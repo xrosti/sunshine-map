@@ -1,4 +1,3 @@
-
 const locations = {
   limansk:{name:"Лиманск",type:"Локация",danger:"Средняя",loot:"Средний",mobs:"Низкий шанс",radiation:"Низкая",text:"Северная точка карты. Хороший ориентир для маршрутов."},
   kpp:{name:"КПП",type:"Контрольная точка",danger:"Высокая",loot:"Средний",mobs:"Средний шанс",radiation:"Средняя",text:"Опасная проходная зона. Лучше подходить аккуратно."},
@@ -75,7 +74,6 @@ function dangerClass(danger){
 }
 
 function openLocation(id){
-  if(document.body.classList.contains("edit-mode")) return;
   const l=locations[id];
   const panel=document.getElementById("infoPanel");
   panel.classList.add("show");
@@ -108,45 +106,17 @@ function closeInfo(){
   document.getElementById("infoPanel").classList.remove("show");
 }
 
-function enableEditMode(){
-  const params = new URLSearchParams(location.search);
-  if(!params.has("edit")) return;
+renderMarks();
 
-  document.body.classList.add("edit-mode");
-  const box = document.getElementById("editBox");
-  box.textContent = "Режим редактирования: тяни маркеры мышкой";
+const mapBtn = document.getElementById('mapBtn');
+const factionBtn = document.getElementById('factionBtn');
 
-  document.querySelectorAll(".marker").forEach(marker=>{
-    marker.addEventListener("mousedown", (e)=>{
-      e.preventDefault();
-      e.stopPropagation();
-
-      const frame = document.getElementById("mapFrame");
-
-      function move(ev){
-        const r = frame.getBoundingClientRect();
-        let x = ((ev.clientX - r.left) / r.width) * 100;
-        let y = ((ev.clientY - r.top) / r.height) * 100;
-        x = Math.max(0, Math.min(100, x));
-        y = Math.max(0, Math.min(100, y));
-        marker.style.left = x.toFixed(4) + "%";
-        marker.style.top = y.toFixed(4) + "%";
-        box.textContent = `${marker.innerText.trim()} | left:${x.toFixed(4)}%; top:${y.toFixed(4)}%;`;
-      }
-
-      function up(){
-        document.removeEventListener("mousemove", move);
-        document.removeEventListener("mouseup", up);
-        const txt = `<button class="${marker.className}" data-id="${marker.dataset.id}" style="left:${marker.style.left}; top:${marker.style.top};" onclick="openLocation('${marker.dataset.id}')">${marker.innerHTML}</button>`;
-        navigator.clipboard?.writeText(txt);
-        box.textContent += "  | HTML скопирован";
-      }
-
-      document.addEventListener("mousemove", move);
-      document.addEventListener("mouseup", up);
-    });
-  });
+mapBtn.onclick = () => {
+    mapBtn.classList.add('active');
+    factionBtn.classList.remove('active');
 }
 
-renderMarks();
-enableEditMode();
+factionBtn.onclick = () => {
+    factionBtn.classList.add('active');
+    mapBtn.classList.remove('active');
+}
