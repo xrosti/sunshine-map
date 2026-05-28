@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Саншайн — Карта зоны</title>
-  <link rel="stylesheet" href="style.css?v=2">
+  <link rel="stylesheet" href="style.css?v=10" />
 </head>
 <body>
 <div class="app">
-
   <header class="topbar">
     <div class="logo">
       <h1>САНШАЙН</h1>
@@ -27,19 +26,22 @@
       <div id="leftList"></div>
     </aside>
 
-    <section class="map-frame">
-      <img src="img/map.png" class="map-img" alt="Карта Саншайна">
-
-      <button class="marker monolit" style="left: 430.602px; top: 65.125px;" onclick="openLocation('limansk')"><span class="badge">М</span><b>Лиманск</b></button>
-      <button class="marker greh" style="left: 820.805px; top: 162.25px;" onclick="openLocation('kpp')"><span class="badge">⚑</span><b>КПП</b></button>
-      <button class="marker greh" style="left: 572.984px; top: 363.422px" onclick="openLocation('yantar')"><span class="badge">☠</span><b>Янтарь</b></button>
-      <button class="marker greh" style="left: 974.828px; top: 341.375px;" onclick="openLocation('wild')"><span class="badge">☠</span><b>Дикая территория</b></button>
-      <button class="marker greh" style="left: 522.117px; top: 593.578px;" onclick="openLocation('agroprom')"><span class="badge">⚑</span><b>Агропром</b></button>
-      <button class="marker greh" style="left: 960.141px; top: 550.578px;" onclick="openLocation('baraholka')"><span class="badge">▣</span><b>Барахолка</b></button>
-      <button class="marker freedom" style="left: 1268.86px; top: 720.719px;" onclick="openLocation('snorks')"><span class="badge">☣</span><b>Деревня снорков</b></button>
-      <button class="marker sky" style="left: 445.516px; top: 968.875px;" onclick="openLocation('water')"><span class="badge">◆</span><b>Водонапорная</b></button>
-      <button class="marker oksop" style="left: 1002.62px; top: 995.25px;" onclick="openLocation('south')"><span class="badge">⚑</span><b>South КПП</b></button>
-      <button class="marker freedom" style="left: 1487.02px; top: 885.859px;" onclick="openLocation('freedomBase')"><span class="badge">☣</span><b>База Свободы</b></button>
+    <section class="map-zone">
+      <div class="map-shell">
+        <div class="map-frame" id="mapFrame">
+          <img src="img/map.png" class="map-img" alt="Карта Саншайна" />
+        <button class="marker monolit" data-id="limansk" style="left:26.3849%; top:6.1150%;" onclick="openLocation('limansk')"><span class="badge">М</span><b>Лиманск</b></button>
+        <button class="marker greh" data-id="kpp" style="left:50.2944%; top:15.2347%;" onclick="openLocation('kpp')"><span class="badge">⚑</span><b>КПП</b></button>
+        <button class="marker greh" data-id="yantar" style="left:35.1093%; top:34.1241%;" onclick="openLocation('yantar')"><span class="badge">☠</span><b>Янтарь</b></button>
+        <button class="marker greh" data-id="wild" style="left:59.7321%; top:32.0540%;" onclick="openLocation('wild')"><span class="badge">☠</span><b>Дикая территория</b></button>
+        <button class="marker greh" data-id="agroprom" style="left:31.9925%; top:55.7350%;" onclick="openLocation('agroprom')"><span class="badge">⚑</span><b>Агропром</b></button>
+        <button class="marker greh" data-id="baraholka" style="left:58.8322%; top:51.6975%;" onclick="openLocation('baraholka')"><span class="badge">▣</span><b>Барахолка</b></button>
+        <button class="marker freedom" data-id="snorks" style="left:77.7488%; top:67.6731%;" onclick="openLocation('snorks')"><span class="badge">☣</span><b>Деревня снорков</b></button>
+        <button class="marker sky" data-id="water" style="left:27.2988%; top:90.9742%;" onclick="openLocation('water')"><span class="badge">◆</span><b>Водонапорная</b></button>
+        <button class="marker oksop" data-id="south" style="left:61.4350%; top:93.4507%;" onclick="openLocation('south')"><span class="badge">⚑</span><b>South КПП</b></button>
+        <button class="marker freedom" data-id="freedomBase" style="left:91.1164%; top:83.1792%;" onclick="openLocation('freedomBase')"><span class="badge">☣</span><b>База Свободы</b></button>
+        </div>
+      </div>
     </section>
   </main>
 
@@ -54,27 +56,25 @@
       <h2>00:00:00</h2>
       <p class="blue">🌙 Ночь</p>
     </div>
-
     <div class="card">
       <span>ОНЛАЙН НА СЕРВЕРЕ</span>
       <h2>0 / 200</h2>
       <p>Игроков</p>
     </div>
-
     <div class="card">
       <span>СТАТУС ЗОНЫ</span>
       <h2 class="orange">Повышенная</h2>
       <p>Активность мутантов и аномалий</p>
     </div>
-
     <div class="card big-timer">
       <span>ВЫБРОС ЧЕРЕЗ:</span>
       <h2>00:00:00</h2>
       <p>Ожидайте укрытие</p>
     </div>
   </footer>
-
 </div>
-<script src="script.js"></script>
+
+<div id="editBox" class="edit-box"></div>
+<script src="script.js?v=10"></script>
 </body>
 </html>
